@@ -38,9 +38,10 @@ if btn:
     df = process(no_of_dependents, education, self_employed, income_annum, loan_amount, loan_term, cibil_score, residential_assets_value, commercial_assets_value, luxury_assets_value, bank_asset_value)
     result  = rf.predict(df)
     if result[0]==0:
-        st.write("Approved")
+        st.balloons()   
+        st.success("Approved")
     else:
-        st.write("Rejected")
+        st.error("Rejected")
 
 st.markdown('<B>Note: The data you enter here is not saved nor shared with anyone.</B>', True)
 st.markdown('This model is trained on the below test dataset downloaded from Kaggle', True)
