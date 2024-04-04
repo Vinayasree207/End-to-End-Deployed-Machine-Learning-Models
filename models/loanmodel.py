@@ -8,12 +8,12 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
 
 def getDataFrame():
-    return pd.read_csv('./data/loan_approval_dataset.csv')
+    return pd.read_csv('./data/loan_approval_dataset/loan_approval_dataset.csv')
 
 def init():
     
     # loading the Data
-    loan_data = pd.read_csv('./data/loan_approval_dataset.csv')
+    loan_data = pd.read_csv('./data/loan_approval_dataset/loan_approval_dataset.csv')
 
     # removing whitespace in the column_name
     loan_data.columns = loan_data.columns.str.strip()
