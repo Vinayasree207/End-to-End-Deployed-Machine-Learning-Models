@@ -16,7 +16,7 @@ st.markdown("""
 
 rf = init()
 
-st.title('Loan Approval Prediction Second App')
+st.title('Loan Approval Prediction')
 st.markdown('''<B>DISCLAIMER: THIS IS A MACHINE LEARNING MODEL CREATED FOR LEARNING PURPOSE ONLY,
             DO NOT CONSIDER THIS RESULTS FOR ACTUAL LOAN APPROVAL PREDICTION</B>''', True)
 no_of_dependents = st.number_input('Enter the number of dependents', 0, 20)
