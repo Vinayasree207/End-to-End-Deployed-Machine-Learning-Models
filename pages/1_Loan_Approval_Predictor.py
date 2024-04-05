@@ -14,6 +14,10 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+@st.cache_data
+def getRawDataFrame():
+    return getDataFrame()
+
 @st.cache_resource
 def getModel():
     return init()
@@ -49,4 +53,5 @@ if btn:
 
 st.markdown('<B>Note: The data you enter here is not saved nor shared with anyone.</B>', True)
 st.markdown('This model is trained on the below dataset downloaded from Kaggle', True)
-st.dataframe(getDataFrame())
+st.subheader('Raw Data Frame for reference')
+st.dataframe(getRawDataFrame())

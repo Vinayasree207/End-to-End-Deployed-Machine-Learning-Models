@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import ast
 import nltk
+import time
 # nltk.download('all')
 from nltk.stem.porter import PorterStemmer
 from sklearn.feature_extraction.text import CountVectorizer
@@ -47,6 +48,7 @@ def init():
 
     # merging the datasets
     movies = movies.merge(credits, on='title')
+    rawdf = movies.copy()
     movies = movies[['movie_id','title','overview','genres','keywords','cast','crew']]
     movies.dropna(inplace=True)
 
@@ -76,7 +78,7 @@ def init():
     ps = PorterStemmer()
     movies_df['tags'] = movies_df['tags'].apply(lambda x: stem(x,ps))
     
-    return movies_df
+    return movies_df,rawdf
 
 def calc_cos_sim(dframe):
     
@@ -95,18 +97,5 @@ def recommend(movie,dframe,sim):
 
     recommend_movies = []
     for i in movies_list:
-        movie_id = i[0]
         recommend_movies.append(str(dframe.iloc[i[0]].title))  
     return recommend_movies
-
-def fetch_poster(movie_id):
-    url = "https://api.themoviedb.org/3/movie/{}?api_key=a90a90d766be503859ba6525546ae6ea&language=en-US".format(movie_id)
-    data = requests.get(url)
-    data = data.json()
-    poster_path = data['poster_path']
-    full_path = "https://image.tmdb.org/t/p/w500/" + poster_path
-    return full_path
-
-    recommend_movies_posters = []
-    recommend_movies_posters.append(fetch_poster(movie_id))
-    recommend_movies_posters
