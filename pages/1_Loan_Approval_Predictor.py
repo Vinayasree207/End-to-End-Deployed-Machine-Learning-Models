@@ -14,7 +14,11 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-rf = init()
+@st.cache_resource
+def getModel():
+    return init()
+
+rf = getModel()
 
 st.title('Loan Approval Prediction')
 st.markdown('''<B>DISCLAIMER: THIS IS A MACHINE LEARNING MODEL CREATED FOR LEARNING PURPOSE ONLY,
@@ -44,5 +48,5 @@ if btn:
         st.error("Rejected")
 
 st.markdown('<B>Note: The data you enter here is not saved nor shared with anyone.</B>', True)
-st.markdown('This model is trained on the below test dataset downloaded from Kaggle', True)
+st.markdown('This model is trained on the below dataset downloaded from Kaggle', True)
 st.dataframe(getDataFrame())
