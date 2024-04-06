@@ -15,15 +15,29 @@ st.markdown("""
 
 st.title("Introduction")
 st.markdown('''
-            Welcome User!
-            This website contains few machine learning models. This website is an example of how a end-to-end model deployment application would look like.
-            All the data that is used for these models is from Kaggle and does not contain any information about any real user.
-            The purpose of this website is to show working Machine Learning Models deployed on AWS EC2 instance, each model uses a different algorithm so solve the problem statement.
-            Below are few of the tech stacks used for end-to-end deployment:
-            - AWS EC2
-            - AWS Route 53 for DNS 
-            - Streamlit for Web development
-            - Putty,WinScp for file transfer
-            - Machine Learning algorithms/models''', True)
+            
+Welcome to the platform!
+
+Here, you'll find a few Prediction and Recommendation based Machine Learning models. 
+
+Think of it as a sneak peek into the world of end-to-end model deployments. I've curated data from Kaggle, ensuring your privacy is always protected—no real user info involved!
+
+My aim is to showcase these operational Machine Learning Models in action deployed on an AWS EC2 instance. Each model comes packed with a unique approach and algorithm, ready to tackle different problem statements head-on.
+
+Here's a glimpse of the tech used behind the scenes:
+
+    🔹 AWS EC2: Powering our platform with reliable infrastructure.
+    🔹 AWS Route 53 for DNS: Ensuring smooth and efficient routing.
+    🔹 Streamlit for Web Development: Crafting an intuitive and user-friendly interface.
+    🔹 Putty and WinScp for File Transfer: Handling file transfers with ease.
+    🔹 Machine Learning Algorithms/Models: The heart and soul of our platform, bringing intelligence to the forefront.
+
+So, Dive in and explore these models! Links to our models are conveniently placed on the left side panel.  
+            
+''', True)
+
 st.markdown('''
-           Feel free to play around with these models. Links are on the left side panel.''', True)
+           Have fun tinkering around with them, and feel free to reach out if you have any questions or feedback..''', True)
+
+st.subheader('''
+           Happy exploring!''')

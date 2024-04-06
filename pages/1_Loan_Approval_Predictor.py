@@ -27,13 +27,22 @@ rf = getModel()
 st.title('Loan Approval Prediction')
 st.markdown('''<B>DISCLAIMER: THIS IS A MACHINE LEARNING MODEL CREATED FOR LEARNING PURPOSE ONLY,
             DO NOT CONSIDER THIS RESULTS FOR ACTUAL LOAN APPROVAL PREDICTION</B>''', True)
+
+st.write(''' NOTE: This Model is trained on a very small data set. Therefore, some of the predictions may not be not accurate. 
+         The only purpose of this model is to demonstrate how an end-to-end ML models can be deployed.
+         
+For the given dataset(bottom of page) the trained model predicts accurate result upto 98%.
+Model has reached a stage of overfitting.
+         ''')
+
+
 no_of_dependents = st.number_input('Enter the number of dependents', 0, 20)
 education = st.selectbox('Choose your education level', ['Graduate','Not Graduate'])
 self_employed = st.radio('Are you self-employed?', ['Yes','No'])
-income_annum = st.number_input('Enter your Annual Income')
-loan_amount = st.number_input('Enter the loan amount', 100000 , 100000000)
-loan_term = st.number_input('Enter the Term of Loan', 1,30)
-cibil_score =st.number_input('Enter your Cibil Score', 300,900)
+income_annum = st.number_input('Enter your Annual Income', 10000)
+loan_amount = st.number_input('Enter the loan amount', 100000, 100000000)
+loan_term = st.number_input('Enter the Term of Loan', 3,30)
+cibil_score =st.number_input('Enter your Cibil Score',300,900)
 residential_assets_value = st.number_input('Enter your residential assets value')
 commercial_assets_value =st.number_input('Enter your commercial assets value')
 luxury_assets_value = st.number_input('Enter your luxury assets value')
